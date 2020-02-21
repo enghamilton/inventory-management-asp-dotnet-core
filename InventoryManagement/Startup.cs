@@ -33,6 +33,12 @@ namespace InventoryManagement
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DYNO")))
+            {
+                Console.WriteLine("Use https redirection");
+                app.UseHttpsRedirection();
+            }
+            /*
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -41,6 +47,7 @@ namespace InventoryManagement
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            */
             app.UseStaticFiles();
 
             app.UseRouting();
