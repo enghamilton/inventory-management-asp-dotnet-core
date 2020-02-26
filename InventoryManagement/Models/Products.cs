@@ -1,13 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace InventoryManagement.Models
 {
     public partial class Products
     {
-        public long id { get; set; }
-        public string username { get; set; }
-        public string phone { get; set; }
-        public string price { get; set; }
+        public long ProductId { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public string Color { get; set; }
+        public decimal UnitPrice { get; set; }
+        public long AvailableQuantity { get; set; }
+        public DateTime CratedDate { get; set; }
     }
 }
