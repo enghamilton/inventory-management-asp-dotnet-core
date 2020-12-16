@@ -1,5 +1,3 @@
-# This branch named heroku works in rest-csharp.herokuapp.com/home or rest-csharp.herokuapp.com/home/privacy
-
 # Inventory Management ASP.NET Core/privacy
 This repository contains the inventory management application, built with ASP.NET Core 3.0 and Entity Framework 3.0 to illustrate performing CRUD actions. 
 
