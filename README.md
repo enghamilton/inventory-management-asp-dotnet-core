@@ -1,3 +1,13 @@
+# Running with GitPod
+npm -g install dotnet-sdk-3.0 --force
+cd InventoryManagement
+dotnet restore
+dotnet build
+dotnet run
+
+After will open a new tab with the running web demo
+by Hamilton Kamiya
+
 # Inventory Management ASP.NET Core
 This repository contains the inventory management application, built with ASP.NET Core 3.0 and Entity Framework 3.0 to illustrate performing CRUD actions. 
 
