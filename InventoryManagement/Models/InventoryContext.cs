@@ -1,15 +1,18 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace InventoryManagement.Models
 {
     public partial class InventoryContext : DbContext
     {
+        /*
         public InventoryContext()
         {
         }
-
+        */
+        
         public InventoryContext(DbContextOptions<InventoryContext> options)
             : base(options)
         {
@@ -21,27 +24,33 @@ namespace InventoryManagement.Models
         {
             modelBuilder.Entity<Products>(entity =>
             {
-                entity.HasKey(e => e.ProductId)
-                    .HasName("PK__Products__B40CC6CD2734EEA5");
+                // Maps to the AspNetUsers table
+                entity.ToTable("products");
 
-                entity.Property(e => e.Category)
+                // Primary key
+                entity.HasKey(e => new {e.pid})
+                    .HasName("pid");
+
+                entity.Property(e => e.pid)
+                    .HasColumnType("int");
+
+                entity.Property(e => e.username)
+                    .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnType("text");
 
-                entity.Property(e => e.Color)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.CratedDate)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.Name)
+                entity.Property(e => e.phone)
                     .IsRequired()
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.UnitPrice).HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.price)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnType("text");
+
             });
 
             OnModelCreatingPartial(modelBuilder);
