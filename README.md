@@ -33,6 +33,62 @@ This repository contains the inventory management application, built with ASP.NE
 
 ```C#
 
+// appsetting.josn
+
+"ConnectionStrings": {
+    "InventoryDatabase": "Host=ec2-107-20-168-237.compute-1.amazonaws.com;Database=d5n07a5mqdt3lh;Username=ivchhoxzrfmfxe;Password=83dd727c514763e78f0874b3008a21ea0da43e93159933c599a89125823ba498;sslmode=Require;Trust Server Certificate=true"
+  }
+
+```
+Model
+
+```C#
+
+using 
+
+// incompleted yet
+
+
+
+```
+
+DBContext
+
+```C#
+
+using 
+
+// incompleted yet
+
+
+
+```
+ProductController
+
+```C#
+
+using 
+
+// incompleted yet
+
+
+
+```
+View/Index
+
+```C#
+
+using 
+
+// incompleted yet
+
+
+
+```
+View/Edit
+
+```C#
+
 using 
 
 // incompleted yet
