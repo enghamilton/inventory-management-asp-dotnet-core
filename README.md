@@ -13,9 +13,9 @@ This repository contains the inventory management application, built with ASP.NE
 
 ## Prerequisites
 
-* Visual Studio 2019 16.3.0 Preview 2.0
-* ASP.NET Core 3.0 Preview 8
-* SQL Server 2017 
+* GitPod.io (web browser such as Chrome, FireFox, Edge, Safari)
+* ASP.NET Core 3.0 available CLI Node Package Manager
+* PostgreSQL dependecy, already included in .csproj file
 
 
 ## How to run the project
