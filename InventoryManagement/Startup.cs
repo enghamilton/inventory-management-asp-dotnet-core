@@ -25,7 +25,7 @@ namespace InventoryManagement
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("InventoryDatabase");
-            services.AddDbContext<InventoryContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<InventoryContext>(options => options.UseNpgsql(connection));
 
             services.AddControllersWithViews();
         }
@@ -45,7 +45,7 @@ namespace InventoryManagement
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
